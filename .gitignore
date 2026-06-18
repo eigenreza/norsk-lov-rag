@@ -1,0 +1,32 @@
+# Local notes and tool settings
+_admin/
+.claude/
+
+# Secrets
+.env
+.env.*
+*.key
+*.pem
+.streamlit/secrets.toml
+
+# Local data, logs and run outputs
+data/
+logs/
+runs/
+
+# Model files and caches
+models/
+*.gguf
+.cache/
+hf_cache/
+
+# Python
+.venv*/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/

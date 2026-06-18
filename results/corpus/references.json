@@ -1,0 +1,78 @@
+{
+  "all_documents": {
+    "scope": "all documents",
+    "references": 136286,
+    "references_to_sections": 109364,
+    "resolved_share": 0.8693,
+    "resolved_to_paragraph": 27196,
+    "to_other_documents": 36642,
+    "same_section_references": 26922,
+    "same_section_resolved_share": 0.8665,
+    "unresolved_reasons": {
+      "section_not_found": 7727,
+      "unknown_act_name": 2976,
+      "ambiguous_act_name": 2010,
+      "cited_document_not_in_corpus": 1341,
+      "parent_law_unknown": 239,
+      "regulation_not_named": 1
+    },
+    "edges_added_inside_ranges": 8365,
+    "agreement_with_lovdata_links": {
+      "pairs_in_lovdata_links": 87069,
+      "pairs_in_graph": 85195,
+      "pairs_in_both": 77138,
+      "recall_against_links": 0.8859,
+      "precision_against_links": 0.9054
+    }
+  },
+  "full_corpus": {
+    "scope": "full corpus",
+    "references": 126393,
+    "references_to_sections": 100209,
+    "resolved_share": 0.8905,
+    "resolved_to_paragraph": 24895,
+    "to_other_documents": 31204,
+    "same_section_references": 26184,
+    "same_section_resolved_share": 0.8809,
+    "unresolved_reasons": {
+      "section_not_found": 5617,
+      "unknown_act_name": 2685,
+      "ambiguous_act_name": 1922,
+      "cited_document_not_in_corpus": 657,
+      "parent_law_unknown": 91,
+      "regulation_not_named": 1
+    },
+    "edges_added_inside_ranges": 8213,
+    "agreement_with_lovdata_links": {
+      "pairs_in_lovdata_links": 82707,
+      "pairs_in_graph": 80040,
+      "pairs_in_both": 73440,
+      "recall_against_links": 0.888,
+      "precision_against_links": 0.9175
+    }
+  },
+  "tax_corpus": {
+    "scope": "tax corpus",
+    "references": 5245,
+    "references_to_sections": 4016,
+    "resolved_share": 0.9323,
+    "resolved_to_paragraph": 1554,
+    "to_other_documents": 1714,
+    "same_section_references": 1229,
+    "same_section_resolved_share": 0.9845,
+    "unresolved_reasons": {
+      "section_not_found": 193,
+      "unknown_act_name": 40,
+      "cited_document_not_in_corpus": 26,
+      "ambiguous_act_name": 13
+    },
+    "edges_added_inside_ranges": 658,
+    "agreement_with_lovdata_links": {
+      "pairs_in_lovdata_links": 3292,
+      "pairs_in_graph": 3274,
+      "pairs_in_both": 3152,
+      "recall_against_links": 0.9575,
+      "precision_against_links": 0.9627
+    }
+  }
+}

@@ -1,0 +1,16 @@
+# NorMistral-7b-warm-instruct for Ollama, from the Q4_K_M file in ltg/normistral-7b-warm-instruct
+# (revision 79abf428264f7b390606da174d1fe1104962c5ca, Apache-2.0).
+# The file says 2048 tokens of context; scripts/set_gguf_context.py writes a copy that says
+# 4096, the length the model card gives for the instruction tuning.
+# Create with: ollama create normistral-7b-warm-instruct-q4km-ctx4096 -f configs/ollama/normistral.Modelfile
+FROM ../../models/gguf/normistral-7b-warm-instruct.Q4_K_M.ctx4096.gguf
+
+# The chat format from the model's tokenizer_config.json.
+TEMPLATE """{{- range .Messages }}<|im_start|> {{ .Role }}
+{{ .Content }}<|im_end|>
+{{ end }}<|im_start|> assistant
+"""
+
+PARAMETER stop "<|im_end|>"
+PARAMETER stop "<|im_start|>"
+PARAMETER num_ctx 4096

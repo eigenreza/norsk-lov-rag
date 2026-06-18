@@ -1,0 +1,52 @@
+{
+  "corpus_hash": "829b4b28d31c142a30bf1cdf7c8d6e353c9eb91d9d67f104f1ad5aafb9690772",
+  "counts": {
+    "cross_reference-nb": 61,
+    "direct-nb": 74,
+    "direct-nn": 20,
+    "everyday-nb": 109,
+    "everyday-nn": 19,
+    "unanswerable-nb": 52,
+    "unanswerable-nn": 9
+  },
+  "split": {
+    "dev": 104,
+    "test": 240
+  },
+  "dev_share": 0.3,
+  "models": {
+    "writer": "groq:openai/gpt-oss-120b",
+    "checker": "groq:qwen/qwen3.8-27b",
+    "reviewer": "google:gemini-3.6-flash"
+  },
+  "model_versions": {
+    "groq:openai/gpt-oss-120b": [
+      "openai/gpt-oss-120b"
+    ],
+    "groq:qwen/qwen3.8-27b": [
+      "qwen/qwen3.8-27b"
+    ],
+    "google:gemini-3.6-flash": [
+      "gemini-3.6-flash"
+    ]
+  },
+  "prompt_versions": {
+    "writer": "writer-v2",
+    "cross_reference_writer": "writer-v2-cross-v3",
+    "unanswerable_writer": "unanswerable-v2",
+    "checker": "checker-v1",
+    "search_check": "search-check-v1",
+    "reviewer": "reviewer-v2"
+  },
+  "search_version": "bm25-snowball-v1",
+  "files": {
+    "dev.jsonl": {
+      "rows": 104,
+      "sha256": "21a0b28637d7b0eb40f566d35c8ae63804785e530629b94876dfd503aaedaadd"
+    },
+    "test.jsonl": {
+      "rows": 240,
+      "sha256": "caada4ac35dfa14b630576d460b8c00760af080f80e3666e1a623b7ba0690f36"
+    }
+  }
+}
