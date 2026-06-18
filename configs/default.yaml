@@ -1,0 +1,188 @@
+# Settings for every stage. Paths are relative to the project folder.
+paths:
+  data_dir: data
+
+# Lovdata's open datasets, read through the public API without a key (NLOD 2.0).
+lovdata:
+  base_url: https://api.lovdata.no
+  datasets:
+    - gjeldende-lover.tar.bz2
+    - gjeldende-sentrale-forskrifter.tar.bz2
+  user_agent: norsk-lov-rag/0.1 (research)
+  timeout_seconds: 120
+  max_retries: 4
+
+corpus:
+  # Folders of the archives that make up the full corpus: acts (nl) and central
+  # regulations (sf). The dataset also holds parliamentary decisions (stv), among them the
+  # yearly tax decisions, instructions (ins) and delegations (del). They are left out.
+  full_folders: [nl, sf]
+  # Documents of the tax corpus, by their key in the provision tables.
+  tax_documents:
+    - lov/1999-03-26-14          # skatteloven
+    - lov/2016-05-27-14          # skatteforvaltningsloven
+    - forskrift/2016-11-23-1360  # skatteforvaltningsforskriften
+    - forskrift/1999-11-19-1158  # FSFIN, forskrift til skatteloven
+    - lov/2009-06-19-58          # merverdiavgiftsloven
+    - forskrift/2009-12-15-1540  # merverdiavgiftsforskriften
+    - lov/2005-06-17-67          # skattebetalingsloven
+    - forskrift/2007-12-21-1766  # skattebetalingsforskriften
+    - forskrift/1999-11-22-1160  # FSSD, Skattedirektoratets skatteforskrift
+
+# Language models on free plans, by the role they play. Each model has the limits of its free
+# plan here, and the client stops when a limit is reached. A model without limits here is never
+# called. Keys are read from the environment or from the ignored .env file.
+llm:
+  env_file: .env
+  timeout_seconds: 120
+  max_retries: 4
+  max_wait_seconds: 120
+  providers:
+    groq:
+      style: openai
+      base_url: https://api.groq.com/openai/v1
+      api_key_env: GROQ_API_KEY
+    google:
+      style: gemini
+      base_url: https://generativelanguage.googleapis.com/v1beta
+      api_key_env: GEMINI_API_KEY
+      timeout_seconds: 300
+    # A local Ollama server on this machine. No key, no cost.
+    ollama:
+      style: ollama
+      base_url: http://localhost:11434
+      timeout_seconds: 900
+  models:
+    # Writes the test questions from the law text (Apache-2.0 weights).
+    writer:
+      provider: groq
+      model: openai/gpt-oss-120b
+      params: {reasoning_effort: low}
+      limits: {requests_per_minute: 30, requests_per_day: 1000,
+               tokens_per_minute: 8000, tokens_per_day: 200000, refill: true}
+    # Checks that a question can be answered from its source text (Apache-2.0 weights).
+    checker:
+      provider: groq
+      model: qwen/qwen3.8-27b
+      params: {reasoning_format: hidden}
+      limits: {requests_per_minute: 30, requests_per_day: 1000,
+               tokens_per_minute: 8000, tokens_per_day: 200000, refill: true}
+    # Reviews the questions that pass the filters. The free daily count starts again at
+    # midnight in California, and failed calls count too, so retries wait longer.
+    reviewer:
+      provider: google
+      model: gemini-3.6-flash
+      retry_base_seconds: 300
+      limits: {requests_per_minute: 5, requests_per_day: 20,
+               day_resets_tz: America/Los_Angeles, counts_failed: true}
+    # Local generator: NorMistral-7b-warm-instruct (Apache-2.0), Q4_K_M GGUF in Ollama, with the
+    # sampling settings from the model card and a fixed seed.
+    normistral:
+      provider: ollama
+      model: normistral-7b-warm-instruct-q4km-ctx4096
+      params:
+        options: {temperature: 0.3, top_k: 64, top_p: 0.9, repeat_penalty: 1.0, seed: 0,
+                  num_ctx: 4096}
+        keep_alive: 30m
+      limits: {requests_per_minute: 60, requests_per_day: 100000}
+    # API generator: Gemma 4 31B (Apache-2.0 weights) on the Gemini free tier. It thinks before
+    # it answers, and the thinking counts against the output limit, so that limit is higher.
+    # The free limits are not published; these are set low on purpose.
+    gemma:
+      provider: google
+      model: gemma-4-31b-it
+      params: {maxOutputTokens: 8192}
+      # The free tier often answers 500 or 503 for a while, so wait longer and try more times.
+      retry_base_seconds: 10
+      max_retries: 8
+      limits: {requests_per_minute: 10, requests_per_day: 1000, tokens_per_minute: 15000}
+    # Judge: the same model and free quota as the test-set reviewer.
+    judge:
+      provider: google
+      model: gemini-3.6-flash
+      retry_base_seconds: 300
+      limits: {requests_per_minute: 5, requests_per_day: 20,
+               day_resets_tz: America/Los_Angeles, counts_failed: true}
+
+retrieval:
+  model_dir: models/hf
+  scopes: [tax, full]
+  strategies: [structure, naive]
+  encoders:
+    e5-base:
+      hf_id: intfloat/multilingual-e5-base
+      revision: d128750597153bb5987e10b1c3493a34e5a4502a
+      licence: MIT
+      query_prefix: "query: "
+      passage_prefix: "passage: "
+    bge-m3:
+      hf_id: BAAI/bge-m3
+      revision: 5617a9f61b028005a4858fdac845db406aefb181
+      licence: MIT
+    nb-sbert-v2-base:
+      hf_id: NbAiLab/nb-sbert-v2-base
+      revision: e339220279a5eb53b297c2991aea87b6141ac6f4
+      licence: Apache-2.0
+    nb-sbert-v2-large:
+      hf_id: NbAiLab/nb-sbert-v2-large
+      revision: b7377067c52a81f159d3dc213640ebfa739809c9
+      licence: Apache-2.0
+  reranker:
+    hf_id: BAAI/bge-reranker-v2-m3
+    revision: 953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e
+    licence: Apache-2.0
+    depth: 30
+  # The full corpus is too large for the bigger models on a laptop CPU, so it gets the best
+  # base-size model on the development set.
+  full_corpus_encoders: [e5-base]
+  # Best lexical and best dense system per corpus on the development set.
+  hybrid:
+    tax: [bm25, "dense:bge-m3"]
+    full: [bm25-compound, "dense:e5-base"]
+  # Planned paired comparisons on the test set: A, B and an optional question type.
+  comparisons:
+    - ["tax-structure/hybrid", "tax-structure/bm25"]
+    - ["tax-structure/hybrid", "tax-structure/dense:bge-m3"]
+    - ["tax-structure/hybrid+rerank", "tax-structure/hybrid"]
+    - ["tax-structure/bm25-compound", "tax-structure/bm25"]
+    - ["tax-structure/dense:nb-sbert-v2-base", "tax-structure/dense:e5-base"]
+    - ["tax-structure/dense:nb-sbert-v2-large", "tax-structure/dense:bge-m3"]
+    - ["tax-structure/hybrid+expansion", "tax-structure/hybrid"]
+    - ["tax-structure/hybrid+expansion", "tax-structure/hybrid", "cross_reference"]
+    - ["tax-structure/hybrid+rerank+expansion", "tax-structure/hybrid+rerank"]
+    - ["tax-structure/hybrid+rerank+expansion", "tax-structure/hybrid+rerank", "cross_reference"]
+    - ["tax-structure/bm25", "tax-naive/bm25"]
+    - ["tax-structure/dense:bge-m3", "tax-naive/dense:bge-m3"]
+    - ["tax-structure/hybrid", "tax-naive/hybrid"]
+    - ["full-structure/bm25-compound", "full-naive/bm25-compound"]
+    - ["tax-structure/bm25-compound", "full-structure/bm25-compound"]
+    - ["tax-structure/dense:e5-base", "full-structure/dense:e5-base"]
+    - ["tax-structure/hybrid+rerank", "full-structure/hybrid+rerank"]
+    - ["full-structure/hybrid", "full-structure/bm25-compound"]
+    - ["full-structure/hybrid", "full-structure/dense:e5-base"]
+    - ["full-structure/hybrid+rerank", "full-structure/hybrid"]
+    - ["full-structure/hybrid+expansion", "full-structure/hybrid", "cross_reference"]
+    - ["full-structure/hybrid+rerank+expansion", "full-structure/hybrid+rerank", "cross_reference"]
+  rrf_k: 60
+  depth: 100
+  expansion_top: 5
+
+generation:
+  # Retrieval systems that feed the generators: the lexical baseline and the best system on the
+  # development set without the reference expansion.
+  retrieval_systems: ["tax-structure/bm25", "tax-structure/hybrid+rerank"]
+  generators: [normistral, gemma]
+  judge: judge
+  top_k: 5
+  max_words_per_source: 300
+  max_context_words: 1200
+  max_tokens: 512
+  judge_batch_size: 80
+  judge_max_tokens: 60000
+  consistency_sample: 50
+  seed: 0
+  comparisons:
+    - ["tax-structure__hybrid+rerank__gemma", "tax-structure__hybrid+rerank__normistral"]
+    - ["tax-structure__bm25__gemma", "tax-structure__bm25__normistral"]
+    - ["tax-structure__hybrid+rerank__gemma", "tax-structure__bm25__gemma"]
+    - ["tax-structure__hybrid+rerank__normistral", "tax-structure__bm25__normistral"]

@@ -1,0 +1,82 @@
+{
+  "corpus_hash": "829b4b28d31c142a30bf1cdf7c8d6e353c9eb91d9d67f104f1ad5aafb9690772",
+  "tax_documents": [
+    {
+      "doc_key": "lov/1999-03-26-14",
+      "name": "Skatteloven",
+      "sections": 344,
+      "provisions": 1107,
+      "written_standard": "nb"
+    },
+    {
+      "doc_key": "lov/2016-05-27-14",
+      "name": "Skatteforvaltningsloven",
+      "sections": 150,
+      "provisions": 389,
+      "written_standard": "nb"
+    },
+    {
+      "doc_key": "forskrift/2016-11-23-1360",
+      "name": "Skatteforvaltningsforskriften",
+      "sections": 302,
+      "provisions": 671,
+      "written_standard": "nb"
+    },
+    {
+      "doc_key": "forskrift/1999-11-19-1158",
+      "name": "FSFIN",
+      "sections": 516,
+      "provisions": 1146,
+      "written_standard": "nb"
+    },
+    {
+      "doc_key": "lov/2009-06-19-58",
+      "name": "Merverdiavgiftsloven",
+      "sections": 148,
+      "provisions": 377,
+      "written_standard": "nb"
+    },
+    {
+      "doc_key": "forskrift/2009-12-15-1540",
+      "name": "Merverdiavgiftsforskriften",
+      "sections": 210,
+      "provisions": 438,
+      "written_standard": "nb"
+    },
+    {
+      "doc_key": "lov/2005-06-17-67",
+      "name": "Skattebetalingsloven",
+      "sections": 112,
+      "provisions": 326,
+      "written_standard": "nb"
+    },
+    {
+      "doc_key": "forskrift/2007-12-21-1766",
+      "name": "Skattebetalingsforskriften",
+      "sections": 202,
+      "provisions": 447,
+      "written_standard": "nb"
+    },
+    {
+      "doc_key": "forskrift/1999-11-22-1160",
+      "name": "FSSD",
+      "sections": 39,
+      "provisions": 96,
+      "written_standard": "nb"
+    }
+  ],
+  "full_folders": {
+    "nl": {
+      "documents": 753,
+      "nynorsk_documents": 101,
+      "provisions": 70669,
+      "nynorsk_provisions": 7452
+    },
+    "sf": {
+      "documents": 3457,
+      "nynorsk_documents": 126,
+      "provisions": 210640,
+      "nynorsk_provisions": 7075
+    }
+  }
+}

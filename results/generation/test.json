@@ -1,0 +1,1031 @@
+{
+  "split": "test",
+  "runs": {
+    "tax-structure__bm25__gemma": {
+      "questions": 240,
+      "correctness": {
+        "n": 198,
+        "mean": 0.8207070707070707,
+        "low": 0.7676767676767676,
+        "high": 0.8712121212121212
+      },
+      "correct_strict": {
+        "n": 198,
+        "mean": 0.803030303030303,
+        "low": 0.7424242424242424,
+        "high": 0.8585858585858586
+      },
+      "labels": {
+        "riktig": 159,
+        "avstått": 31,
+        "delvis": 7,
+        "feil": 1
+      },
+      "unjudged": 0,
+      "citation_precision": {
+        "n": 166,
+        "mean": 0.861144578313253,
+        "low": 0.8154618473895583,
+        "high": 0.8996034136546185
+      },
+      "citation_recall": {
+        "n": 198,
+        "mean": 0.7676767676767676,
+        "low": 0.7095959595959596,
+        "high": 0.8182449494949492
+      },
+      "lenient_citation_precision": {
+        "n": 166,
+        "mean": 0.8116465863453817,
+        "low": 0.7645507028112449,
+        "high": 0.8526154618473895
+      },
+      "lenient_citation_recall": {
+        "n": 198,
+        "mean": 0.7803030303030303,
+        "low": 0.7247474747474747,
+        "high": 0.8308080808080808
+      },
+      "support": {
+        "n": 167,
+        "mean": 0.9880239520958084,
+        "low": 0.9700598802395209,
+        "high": 1.0
+      },
+      "outside_sources": {
+        "n": 167,
+        "mean": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      "unresolved": {
+        "n": 167,
+        "mean": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      "all_sentences_cited": {
+        "n": 167,
+        "mean": 0.9580838323353293,
+        "low": 0.9279940119760479,
+        "high": 0.9880239520958084
+      },
+      "correct_refusals": {
+        "n": 42,
+        "mean": 0.9761904761904762,
+        "low": 0.9285714285714286,
+        "high": 1.0
+      },
+      "false_refusals": {
+        "n": 198,
+        "mean": 0.15656565656565657,
+        "low": 0.10606060606060606,
+        "high": 0.20707070707070707
+      },
+      "language": {
+        "match": 215,
+        "unclear": 24,
+        "mismatch": 1
+      },
+      "language_match": {
+        "n": 240,
+        "mean": 0.9958333333333333,
+        "low": 0.9875,
+        "high": 1.0
+      },
+      "valid_output": {
+        "n": 240,
+        "mean": 0.9958333333333333,
+        "low": 0.9875,
+        "high": 1.0
+      },
+      "truncated": 1,
+      "prompt_tokens": 1823.2291666666667,
+      "completion_tokens": 1163.4416666666666,
+      "latency_median": 53.447,
+      "latency_p95": 116.0914,
+      "by_type": {
+        "cross_reference": {
+          "n": 43,
+          "correctness": {
+            "n": 43,
+            "mean": 0.6744186046511628,
+            "low": 0.5465116279069767,
+            "high": 0.8023255813953488
+          },
+          "refusals": {
+            "n": 43,
+            "mean": 0.2558139534883721,
+            "low": 0.13953488372093023,
+            "high": 0.3953488372093023
+          }
+        },
+        "direct": {
+          "n": 66,
+          "correctness": {
+            "n": 66,
+            "mean": 0.9696969696969697,
+            "low": 0.9242424242424242,
+            "high": 1.0
+          },
+          "refusals": {
+            "n": 66,
+            "mean": 0.030303030303030304,
+            "low": 0.0,
+            "high": 0.07575757575757576
+          }
+        },
+        "everyday": {
+          "n": 89,
+          "correctness": {
+            "n": 89,
+            "mean": 0.7808988764044944,
+            "low": 0.6966292134831461,
+            "high": 0.8651685393258427
+          },
+          "refusals": {
+            "n": 89,
+            "mean": 0.20224719101123595,
+            "low": 0.12359550561797752,
+            "high": 0.2808988764044944
+          }
+        },
+        "unanswerable": {
+          "n": 42,
+          "correctness": {
+            "n": 0,
+            "mean": null,
+            "low": null,
+            "high": null
+          },
+          "refusals": {
+            "n": 42,
+            "mean": 0.9761904761904762,
+            "low": 0.9285714285714286,
+            "high": 1.0
+          }
+        }
+      },
+      "by_standard": {
+        "nb": {
+          "n": 207,
+          "correctness": {
+            "n": 171,
+            "mean": 0.827485380116959,
+            "low": 0.7690058479532164,
+            "high": 0.8801169590643275
+          },
+          "refusals": {
+            "n": 207,
+            "mean": 0.2995169082125604,
+            "low": 0.23671497584541062,
+            "high": 0.36231884057971014
+          }
+        },
+        "nn": {
+          "n": 33,
+          "correctness": {
+            "n": 27,
+            "mean": 0.7777777777777778,
+            "low": 0.6296296296296297,
+            "high": 0.9259259259259259
+          },
+          "refusals": {
+            "n": 33,
+            "mean": 0.30303030303030304,
+            "low": 0.15151515151515152,
+            "high": 0.45454545454545453
+          }
+        }
+      }
+    },
+    "tax-structure__bm25__normistral": {
+      "questions": 240,
+      "correctness": {
+        "n": 198,
+        "mean": 0.6313131313131313,
+        "low": 0.5707070707070707,
+        "high": 0.6893939393939394
+      },
+      "correct_strict": {
+        "n": 198,
+        "mean": 0.5252525252525253,
+        "low": 0.45454545454545453,
+        "high": 0.5959595959595959
+      },
+      "labels": {
+        "delvis": 42,
+        "riktig": 104,
+        "feil": 50,
+        "avstått": 2
+      },
+      "unjudged": 0,
+      "citation_precision": {
+        "n": 26,
+        "mean": 0.42435897435897435,
+        "low": 0.2448717948717949,
+        "high": 0.6039743589743582
+      },
+      "citation_recall": {
+        "n": 198,
+        "mean": 0.05555555555555555,
+        "low": 0.027777777777777776,
+        "high": 0.08585858585858586
+      },
+      "lenient_citation_precision": {
+        "n": 120,
+        "mean": 0.3406349206349207,
+        "low": 0.26924404761904763,
+        "high": 0.41321726190476193
+      },
+      "lenient_citation_recall": {
+        "n": 198,
+        "mean": 0.2601010101010101,
+        "low": 0.20707070707070707,
+        "high": 0.31565656565656564
+      },
+      "support": {
+        "n": 31,
+        "mean": 0.40483870967741936,
+        "low": 0.2543010752688172,
+        "high": 0.5688172043010753
+      },
+      "outside_sources": {
+        "n": 31,
+        "mean": 0.18387096774193545,
+        "low": 0.07526881720430106,
+        "high": 0.3129032258064516
+      },
+      "unresolved": {
+        "n": 31,
+        "mean": 0.15591397849462366,
+        "low": 0.04838709677419355,
+        "high": 0.27419354838709675
+      },
+      "all_sentences_cited": {
+        "n": 238,
+        "mean": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      "correct_refusals": {
+        "n": 42,
+        "mean": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      "false_refusals": {
+        "n": 198,
+        "mean": 0.010101010101010102,
+        "low": 0.0,
+        "high": 0.025252525252525252
+      },
+      "language": {
+        "match": 232,
+        "unclear": 4,
+        "mismatch": 4
+      },
+      "language_match": {
+        "n": 240,
+        "mean": 0.9833333333333333,
+        "low": 0.9625,
+        "high": 0.9958333333333333
+      },
+      "valid_output": {
+        "n": 240,
+        "mean": 0.9916666666666667,
+        "low": 0.9791666666666666,
+        "high": 1.0
+      },
+      "truncated": 33,
+      "prompt_tokens": 1390.6041666666667,
+      "completion_tokens": 266.1958333333333,
+      "latency_median": 51.0345,
+      "latency_p95": 97.26914999999995,
+      "by_type": {
+        "cross_reference": {
+          "n": 43,
+          "correctness": {
+            "n": 43,
+            "mean": 0.5232558139534884,
+            "low": 0.38372093023255816,
+            "high": 0.6511627906976745
+          },
+          "refusals": {
+            "n": 43,
+            "mean": 0.0,
+            "low": 0.0,
+            "high": 0.0
+          }
+        },
+        "direct": {
+          "n": 66,
+          "correctness": {
+            "n": 66,
+            "mean": 0.7651515151515151,
+            "low": 0.6742424242424242,
+            "high": 0.8409090909090909
+          },
+          "refusals": {
+            "n": 66,
+            "mean": 0.0,
+            "low": 0.0,
+            "high": 0.0
+          }
+        },
+        "everyday": {
+          "n": 89,
+          "correctness": {
+            "n": 89,
+            "mean": 0.5842696629213483,
+            "low": 0.4887640449438202,
+            "high": 0.6741573033707865
+          },
+          "refusals": {
+            "n": 89,
+            "mean": 0.02247191011235955,
+            "low": 0.0,
+            "high": 0.056179775280898875
+          }
+        },
+        "unanswerable": {
+          "n": 42,
+          "correctness": {
+            "n": 0,
+            "mean": null,
+            "low": null,
+            "high": null
+          },
+          "refusals": {
+            "n": 42,
+            "mean": 0.0,
+            "low": 0.0,
+            "high": 0.0
+          }
+        }
+      },
+      "by_standard": {
+        "nb": {
+          "n": 207,
+          "correctness": {
+            "n": 171,
+            "mean": 0.631578947368421,
+            "low": 0.564327485380117,
+            "high": 0.695906432748538
+          },
+          "refusals": {
+            "n": 207,
+            "mean": 0.00966183574879227,
+            "low": 0.0,
+            "high": 0.024154589371980676
+          }
+        },
+        "nn": {
+          "n": 33,
+          "correctness": {
+            "n": 27,
+            "mean": 0.6296296296296297,
+            "low": 0.4444444444444444,
+            "high": 0.7962962962962963
+          },
+          "refusals": {
+            "n": 33,
+            "mean": 0.0,
+            "low": 0.0,
+            "high": 0.0
+          }
+        }
+      }
+    },
+    "tax-structure__hybrid+rerank__gemma": {
+      "questions": 240,
+      "correctness": {
+        "n": 198,
+        "mean": 0.9166666666666666,
+        "low": 0.8787878787878788,
+        "high": 0.952020202020202
+      },
+      "correct_strict": {
+        "n": 198,
+        "mean": 0.898989898989899,
+        "low": 0.8535353535353535,
+        "high": 0.9393939393939394
+      },
+      "labels": {
+        "riktig": 178,
+        "avstått": 10,
+        "delvis": 7,
+        "feil": 3
+      },
+      "unjudged": 0,
+      "citation_precision": {
+        "n": 187,
+        "mean": 0.8253119429590018,
+        "low": 0.7851938502673795,
+        "high": 0.8658645276292336
+      },
+      "citation_recall": {
+        "n": 198,
+        "mean": 0.8686868686868687,
+        "low": 0.8257575757575758,
+        "high": 0.9116161616161617
+      },
+      "lenient_citation_precision": {
+        "n": 187,
+        "mean": 0.7693404634581106,
+        "low": 0.7268204099821747,
+        "high": 0.812121212121212
+      },
+      "lenient_citation_recall": {
+        "n": 198,
+        "mean": 0.8737373737373737,
+        "low": 0.8308080808080808,
+        "high": 0.9141414141414141
+      },
+      "support": {
+        "n": 186,
+        "mean": 0.9838709677419355,
+        "low": 0.9623655913978495,
+        "high": 1.0
+      },
+      "outside_sources": {
+        "n": 188,
+        "mean": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      "unresolved": {
+        "n": 188,
+        "mean": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      "all_sentences_cited": {
+        "n": 188,
+        "mean": 0.9627659574468085,
+        "low": 0.9360372340425532,
+        "high": 0.9840425531914894
+      },
+      "correct_refusals": {
+        "n": 42,
+        "mean": 0.9761904761904762,
+        "low": 0.9285714285714286,
+        "high": 1.0
+      },
+      "false_refusals": {
+        "n": 198,
+        "mean": 0.050505050505050504,
+        "low": 0.020202020202020204,
+        "high": 0.08080808080808081
+      },
+      "language": {
+        "match": 217,
+        "unclear": 22,
+        "mismatch": 1
+      },
+      "language_match": {
+        "n": 240,
+        "mean": 0.9958333333333333,
+        "low": 0.9875,
+        "high": 1.0
+      },
+      "valid_output": {
+        "n": 240,
+        "mean": 0.9958333333333333,
+        "low": 0.9875,
+        "high": 1.0
+      },
+      "truncated": 1,
+      "prompt_tokens": 1993.6166666666666,
+      "completion_tokens": 1201.7875,
+      "latency_median": 55.513000000000005,
+      "latency_p95": 102.99069999999999,
+      "by_type": {
+        "cross_reference": {
+          "n": 43,
+          "correctness": {
+            "n": 43,
+            "mean": 0.8023255813953488,
+            "low": 0.686046511627907,
+            "high": 0.9069767441860465
+          },
+          "refusals": {
+            "n": 43,
+            "mean": 0.11627906976744186,
+            "low": 0.023255813953488372,
+            "high": 0.23255813953488372
+          }
+        },
+        "direct": {
+          "n": 66,
+          "correctness": {
+            "n": 66,
+            "mean": 0.9621212121212122,
+            "low": 0.9166666666666666,
+            "high": 1.0
+          },
+          "refusals": {
+            "n": 66,
+            "mean": 0.015151515151515152,
+            "low": 0.0,
+            "high": 0.045454545454545456
+          }
+        },
+        "everyday": {
+          "n": 89,
+          "correctness": {
+            "n": 89,
+            "mean": 0.9382022471910112,
+            "low": 0.8820224719101124,
+            "high": 0.9831460674157303
+          },
+          "refusals": {
+            "n": 89,
+            "mean": 0.0449438202247191,
+            "low": 0.011235955056179775,
+            "high": 0.0898876404494382
+          }
+        },
+        "unanswerable": {
+          "n": 42,
+          "correctness": {
+            "n": 0,
+            "mean": null,
+            "low": null,
+            "high": null
+          },
+          "refusals": {
+            "n": 42,
+            "mean": 0.9761904761904762,
+            "low": 0.9285714285714286,
+            "high": 1.0
+          }
+        }
+      },
+      "by_standard": {
+        "nb": {
+          "n": 207,
+          "correctness": {
+            "n": 171,
+            "mean": 0.9210526315789473,
+            "low": 0.8801169590643275,
+            "high": 0.956140350877193
+          },
+          "refusals": {
+            "n": 207,
+            "mean": 0.20772946859903382,
+            "low": 0.15458937198067632,
+            "high": 0.26099033816425055
+          }
+        },
+        "nn": {
+          "n": 33,
+          "correctness": {
+            "n": 27,
+            "mean": 0.8888888888888888,
+            "low": 0.7777777777777778,
+            "high": 1.0
+          },
+          "refusals": {
+            "n": 33,
+            "mean": 0.24242424242424243,
+            "low": 0.12121212121212122,
+            "high": 0.3939393939393939
+          }
+        }
+      }
+    },
+    "tax-structure__hybrid+rerank__normistral": {
+      "questions": 240,
+      "correctness": {
+        "n": 198,
+        "mean": 0.6414141414141414,
+        "low": 0.5782828282828283,
+        "high": 0.6994949494949495
+      },
+      "correct_strict": {
+        "n": 198,
+        "mean": 0.5555555555555556,
+        "low": 0.48977272727272725,
+        "high": 0.6212121212121212
+      },
+      "labels": {
+        "riktig": 110,
+        "feil": 50,
+        "delvis": 34,
+        "avstått": 4
+      },
+      "unjudged": 0,
+      "citation_precision": {
+        "n": 23,
+        "mean": 0.3623188405797101,
+        "low": 0.22463768115942026,
+        "high": 0.5144927536231884
+      },
+      "citation_recall": {
+        "n": 198,
+        "mean": 0.06818181818181818,
+        "low": 0.03535353535353535,
+        "high": 0.10606060606060606
+      },
+      "lenient_citation_precision": {
+        "n": 111,
+        "mean": 0.3485199485199485,
+        "low": 0.276808773058773,
+        "high": 0.4215594165594166
+      },
+      "lenient_citation_recall": {
+        "n": 198,
+        "mean": 0.2601010101010101,
+        "low": 0.20454545454545456,
+        "high": 0.3207070707070707
+      },
+      "support": {
+        "n": 27,
+        "mean": 0.5740740740740741,
+        "low": 0.4074074074074074,
+        "high": 0.7407407407407407
+      },
+      "outside_sources": {
+        "n": 27,
+        "mean": 0.24074074074074073,
+        "low": 0.10493827160493827,
+        "high": 0.3888888888888889
+      },
+      "unresolved": {
+        "n": 27,
+        "mean": 0.2222222222222222,
+        "low": 0.09259259259259259,
+        "high": 0.37037037037037035
+      },
+      "all_sentences_cited": {
+        "n": 235,
+        "mean": 0.00425531914893617,
+        "low": 0.0,
+        "high": 0.01276595744680851
+      },
+      "correct_refusals": {
+        "n": 42,
+        "mean": 0.023809523809523808,
+        "low": 0.0,
+        "high": 0.07142857142857142
+      },
+      "false_refusals": {
+        "n": 198,
+        "mean": 0.020202020202020204,
+        "low": 0.005050505050505051,
+        "high": 0.04040404040404041
+      },
+      "language": {
+        "match": 229,
+        "unclear": 5,
+        "mismatch": 6
+      },
+      "language_match": {
+        "n": 240,
+        "mean": 0.975,
+        "low": 0.9541666666666667,
+        "high": 0.9916666666666667
+      },
+      "valid_output": {
+        "n": 240,
+        "mean": 0.9958333333333333,
+        "low": 0.9875,
+        "high": 1.0
+      },
+      "truncated": 28,
+      "prompt_tokens": 1517.6583333333333,
+      "completion_tokens": 267.675,
+      "latency_median": 49.6595,
+      "latency_p95": 99.8429,
+      "by_type": {
+        "cross_reference": {
+          "n": 43,
+          "correctness": {
+            "n": 43,
+            "mean": 0.5465116279069767,
+            "low": 0.4069767441860465,
+            "high": 0.6744186046511628
+          },
+          "refusals": {
+            "n": 43,
+            "mean": 0.0,
+            "low": 0.0,
+            "high": 0.0
+          }
+        },
+        "direct": {
+          "n": 66,
+          "correctness": {
+            "n": 66,
+            "mean": 0.6893939393939394,
+            "low": 0.5909090909090909,
+            "high": 0.7878787878787878
+          },
+          "refusals": {
+            "n": 66,
+            "mean": 0.0,
+            "low": 0.0,
+            "high": 0.0
+          }
+        },
+        "everyday": {
+          "n": 89,
+          "correctness": {
+            "n": 89,
+            "mean": 0.651685393258427,
+            "low": 0.5617977528089888,
+            "high": 0.7415730337078652
+          },
+          "refusals": {
+            "n": 89,
+            "mean": 0.0449438202247191,
+            "low": 0.011235955056179775,
+            "high": 0.0898876404494382
+          }
+        },
+        "unanswerable": {
+          "n": 42,
+          "correctness": {
+            "n": 0,
+            "mean": null,
+            "low": null,
+            "high": null
+          },
+          "refusals": {
+            "n": 42,
+            "mean": 0.023809523809523808,
+            "low": 0.0,
+            "high": 0.07142857142857142
+          }
+        }
+      },
+      "by_standard": {
+        "nb": {
+          "n": 207,
+          "correctness": {
+            "n": 171,
+            "mean": 0.6345029239766082,
+            "low": 0.5701754385964912,
+            "high": 0.6988304093567251
+          },
+          "refusals": {
+            "n": 207,
+            "mean": 0.024154589371980676,
+            "low": 0.004830917874396135,
+            "high": 0.04830917874396135
+          }
+        },
+        "nn": {
+          "n": 33,
+          "correctness": {
+            "n": 27,
+            "mean": 0.6851851851851852,
+            "low": 0.5185185185185185,
+            "high": 0.8337962962962938
+          },
+          "refusals": {
+            "n": 33,
+            "mean": 0.0,
+            "low": 0.0,
+            "high": 0.0
+          }
+        }
+      }
+    }
+  },
+  "judge_consistency": {
+    "items": 50,
+    "correctness_pairs": 50,
+    "correctness_agreement": 0.8,
+    "correctness_kappa": 0.5442114858705561,
+    "support_pairs": 41,
+    "support_agreement": 0.975609756097561
+  },
+  "comparisons": [
+    {
+      "a": "tax-structure__hybrid+rerank__gemma",
+      "b": "tax-structure__hybrid+rerank__normistral",
+      "n": 198,
+      "correctness": {
+        "mean": 0.27525252525252525,
+        "low": 0.21464646464646464,
+        "high": 0.3383838383838384
+      }
+    },
+    {
+      "a": "tax-structure__bm25__gemma",
+      "b": "tax-structure__bm25__normistral",
+      "n": 198,
+      "correctness": {
+        "mean": 0.1893939393939394,
+        "low": 0.12121212121212122,
+        "high": 0.25757575757575757
+      }
+    },
+    {
+      "a": "tax-structure__hybrid+rerank__gemma",
+      "b": "tax-structure__bm25__gemma",
+      "n": 198,
+      "correctness": {
+        "mean": 0.09595959595959595,
+        "low": 0.047979797979797977,
+        "high": 0.14646464646464646
+      }
+    },
+    {
+      "a": "tax-structure__hybrid+rerank__normistral",
+      "b": "tax-structure__bm25__normistral",
+      "n": 198,
+      "correctness": {
+        "mean": 0.010101010101010102,
+        "low": -0.05303030303030303,
+        "high": 0.0732954545454542
+      }
+    }
+  ],
+  "examples": {
+    "citation_outside_sources": {
+      "count": 17,
+      "examples": [
+        {
+          "run": "tax-structure__bm25__normistral",
+          "item_id": "cross_reference-nb-089",
+          "question": "Må fradragsført inngående merverdiavgift tilbakeføres når en nyoppusset bygning med MVA‑kostnad på 120 000 kr selges før ferdigstillelse?",
+          "answer": "Nei, fradragsført inngående merverdiavgift skal ikke tilbakeføres når en nyoppusset bygning med en inngående merverdiavgiftskostnad på 120 000 kroner selges før ferdigstillelse. Dette er fordi bygningen ikke er ment for bruk i avgiftspliktig virksomhet, ettersom den er ment for salg og ikke for utleie.\n\nI henhold til merverdiavgiftsloven § 9-7 skal fradragsført inngående merverdiavgift tilbakeføres i det omfang den som overtar bygningen, overtar plikten til å tilbakeføre den fradragsførte inngående avgiften. Siden bygningen ikke er ment for bruk i avgiftspliktig virksomhet, er det ikke noen som overtar plikten til å tilbakeføre den fradragsførte inngående avgiften. Derfor er det ikke nødvendig å tilbakeføre noen fradragsført inngående avgift.\n\nDet er også verdt å merke seg at det er noen unntak fra denne regelen, for eksempel hvis bygningen selges til en kjøper som skal bruke den i avgiftspliktig virksomhet. I dette tilfellet kan kjøperen være pålagt å tilbakeføre den fradragsførte inngående avgiften til staten.\n\nJeg håper dette hjelper! Si ifra hvis du har andre spørsmål.\n\nMerk: Kilden for denne informasjonen er Merverdiavgiftshåndboken, som er utgitt av Skatteetaten. Merverdiavgiftshåndboken gir detaljert informasjon om reglene for merverdiavgift i Norge. Du kan finne den på [www.skatteetaten.no/rettskilder/handboker/merverdiavgiftshandboken/](http://www.skatteetaten.no/rettskilder/handboker/merverdiavgiftshandboken/). Vær oppmerksom på at jeg ikke kan gi hyperlenker, så du må skrive inn adressen manuelt i nettleseren din.",
+          "reason": "Svaret svarer feilaktig at inngående merverdiavgift ikke skal tilbakeføres."
+        },
+        {
+          "run": "tax-structure__bm25__normistral",
+          "item_id": "cross_reference-nb-112",
+          "question": "Er et verdipapirfond med tillatelse etter verdipapirfondloven fritatt fra skatteplikt på inntekt fra aksjer?",
+          "answer": "1. [FSFIN § 4-12-5] Oppgaveplikt og fastsettelse: Beregning av aksjenes formuesverdi skal vedlegges selskapets skattemelding. Dette gjelder likevel ikke for ikke-børsnotert selskap som direkte eller indirekte i sin helhet eies av et børsnotert aksjeselskap eller allmennaksjeselskap. Første punktum gjelder heller ikke for ikke-børsnotert selskap som direkte eller indirekte i sin helhet er eid av personer eller institusjoner som er fritatt for skatteplikt etter skatteloven § 2-30.\n2. [FSFIN § 10-21-1] Hvem som kan tilby aksjesparekonto: Aksjesparekonto kan tilbys av institusjoner som har tillatelse fra norske myndigheter til å drive virksomhet her i riket som bank, verdipapirforetak eller forvaltningsselskap for verdipapirfond. Aksjesparekonto kan også tilbys av bank, verdipapirforetak og forvaltningsselskap for verdipapirfond som er hjemmehørende innenfor EØS, og som har adgang til å drive tilsvarende virksomhet som nevnt i første ledd her i riket.\n3. [skatteloven § 2-38] Skattefritak for visse selskaper mv. for inntekt på aksjer og andre eierandeler: Følgende skattytere er fritatt for skatteplikt av inntekt og har ikke fradragsrett for tap etter bestemmelsene i denne paragraf:\na. selskap mv. som nevnt i § 2-2 første ledd a til d og tilsvarende selskap stiftet i utlandet som er hjemmehørende i Norge,\nb. verdipapirfond,\nc. interkommunalt selskap,\nd. selskap mv. som er heleid av staten,\ne. forening,\nf. stiftelse,\ng. kommune og fylkeskommune,\nh. konkurs- og administrasjonsbo etter debitor som omfattes av dette ledd,\ni. selskap mv. hjemmehørende i utlandet som tilsvarer selskap mv. som omfattes av dette ledd.\n4. [FSFIN § 4-12-1] Anvendelsesområde for bestemmelsene om formuesverdi av ikke-børsnoterte aksjer: Bestemmelsene i denne forskrift § 4-12 gjelder beregning av formuesverdien av aksjer i ikke-børsnotert selskap som nevnt i skatteloven § 4-12 annet ledd.\n5. [FSFIN § 10-20-1] Oppgaveplikt og fastsettelse: Oppgaveplikt og fastsettelse av formuesverdi for ikke-børsnoterte aksjer i norske selskaper skal innberettes på eget skjema til ligningsmyndighetene. Skjemaet skal underskrives",
+          "reason": "Svaret er riktig da det viser til skattefritaket i skatteloven § 2-38, men den siste kildeteksten om verdipapirfond støtter ikke den oppgitte påstanden om formuesverdi."
+        },
+        {
+          "run": "tax-structure__bm25__normistral",
+          "item_id": "direct-nb-055",
+          "question": "Under hvilke betingelser kan fiskere få utbetalt overskytende inngående merverdiavgift før årets slutt?",
+          "answer": "Fiskere som skal levere skattemelding én gang i året, kan etter forlis, større redskapstap eller større skade på fartøy, fiskeredskap eller fartøyets varige driftsutstyr få utbetalt overskytende inngående merverdiavgift etter særskilt avregning før årets slutt. Dette er regulert i  [merverdiavgiftsloven  §  11-6](https://lovdata.no/dokument/NL/lov/2009-06-19-58/KAPITTEL_11#%C2%A711-6). Det er imidlertid flere vilkår som må være oppfylt for at en fisker skal kunne få en slik utbetaling:\n\n1. Fiskeren må levere skattemelding for merverdiavgift én gang i året, etter bestemmelser gitt i medhold av skatteforvaltningsloven  [skatteloven  §  8-16](https://lovdata.no/dokument/NL/lov/1980-06-13-24/KAPITTEL_3-1#%C2%A78-16).\n2. Fiskeren må ha hatt et forlis, større redskapstap eller større skade på fartøy, fiskeredskap eller fartøyets varige driftsutstyr.\n3. Utbetalingen må skje før årets slutt.\n4. Utbetalingen må skje etter særskilt avregning.\n\nDet er viktig å merke seg at disse vilkårene må være oppfylt for at en fisker skal kunne få utbetalt overskytende inngående merverdiavgift. Hvis en fisker oppfyller disse vilkårene, kan de søke om en slik utbetaling ved å levere en skattemelding for merverdiavgift etter  [merverdiavgiftsloven  §  11-5](https://lovdata.no/dokument/NL/lov/2009-06-19-58/KAPITTEL_11#%C2%A711-5). Skattemeldingen må være levert for tidligere terminer, og utbetalingen vil skje etter at skattemeldingen er behandlet.\n\nJeg håper denne informasjonen er nyttig. Hvis du har andre spørsmål, er det bare å spørre.",
+          "reason": "Svaret forklarer vilkårene for særskilt avregning korrekt, selv om siteringen av skatteloven § 8-16 omhandler tonnasjeskatt."
+        }
+      ]
+    },
+    "false_refusal": {
+      "count": 47,
+      "examples": [
+        {
+          "run": "tax-structure__bm25__gemma",
+          "item_id": "cross_reference-nb-009",
+          "question": "Skal en virksomhet med omsetning på 4 millioner kroner som leier ut lokaler i et idrettsanlegg til konferanser beregne merverdiavgift med redusert sats?",
+          "answer": "Jeg finner ikke svaret i lovtekstene jeg har fått.",
+          "reason": null
+        },
+        {
+          "run": "tax-structure__bm25__gemma",
+          "item_id": "cross_reference-nb-055",
+          "question": "Kan en norsk investor få fullt kreditfradrag for skatt betalt i et lavskattland som er oppført i listen over lavskattland?",
+          "answer": "Jeg finner ikke svaret i lovtekstene jeg har fått.",
+          "reason": null
+        },
+        {
+          "run": "tax-structure__bm25__gemma",
+          "item_id": "cross_reference-nb-061",
+          "question": "Kan et norsk aksjeselskap med fast eiendom i en annen EØS-stat kreve fullt gjeldsfradrag i Norge dersom selskapet er hjemmehørende i Norge etter skattereglene?",
+          "answer": "Jeg finner ikke svaret i lovtekstene jeg har fått.",
+          "reason": null
+        }
+      ]
+    },
+    "invalid_output": {
+      "count": 5,
+      "examples": [
+        {
+          "run": "tax-structure__bm25__gemma",
+          "item_id": "everyday-nn-020",
+          "question": "Kor mange medlemmar må vere med når nemnda avgjer ein sak, og korleis blir avgjersla fatta?",
+          "answer": "",
+          "reason": "Svaret er tomt og besvarer ikke spørsmålet."
+        },
+        {
+          "run": "tax-structure__bm25__normistral",
+          "item_id": "cross_reference-nb-111",
+          "question": "Skal verdien av en andel i et selskap i et lavskattland justeres for urealisert valutagevinst når andelen er bokført etter kostmetoden?",
+          "answer": "[FSFIN  §  8-20-10] Justering av regnskapsmessige verdier\nVed fastsettelse av regnskapsmessige verdier etter første ledd annet punktum og åttende ledd første punktum i overgangsregler til endringer i skatteloven  §  8-14, §  8-15 og §  8-17, jf. lov  14. desember  2007 nr.  107 om endringer i lov  26. mars  1999 nr.  14 om skatt av formue og inntekt  (skatteloven) del X, skal det foretas følgende justeringer:\n\na. Selskap som utarbeider selskapsregnskap etter regnskapsloven  §  3-9 tredje eller fjerde ledd skal, for så vidt gjelder driftsmidler og andeler i selskaper som nevnt i skatteloven  §  10-40 og  §  10-60, korrigere for differanse mellom bokført verdi og den verdi eiendelen ville vært bokført til dersom eiendelen hadde vært vurdert etter norske regnskapsregler, med eventuelle justeringer etter bokstav b.\n\nSpørsmål:\nSkal verdien av en andel i et selskap i et lavskattland justeres for urealisert valutagevinst når andelen er bokført etter kostmetoden?\n\nSvar:\nUttalelsen som er gitt i FSFIN §  8-20-10, gjelder justeringer for regnskapsmessige verdier i forbindelse med overgangsregler til endringer i skatteloven  §  8-14, §  8-15 og §  8-17, jf. lov  14. desember  2007 nr.  107 om endringer i lov  26. mars  1999 nr.  14 om skatt av formue og inntekt  (skatteloven) del X. Uttalelsen sier ikke eksplisitt at verdien av en andel i et selskap i et lavskattland skal justeres for urealisert valutagevinst når andelen er bokført etter kostmetoden.\n\nImidlertid, basert på den generelle regelen om justering av regnskapsmessige verdier, er det rimelig å anta at urealisert valutagevinst eller -tap som ikke er inntektsført eller fradragsført i det underliggende selskapet, skal tas med i beregningen av justeringen. Dette er fordi justeringen er ment å gjenspeile forskjellen mellom den regnskapsmessige verdien av eiendelen og den verdien den ville hatt hvis den var vurdert etter norske regnskapsregler. Hvis det er urealiserte gevinster eller -tap i den utenlandske valutaen,",
+          "reason": "Svaret konkluderer med at det skal tas med, men påstår uheldigvis at regelen ikke står eksplisitt i forskriften når den gjør det."
+        },
+        {
+          "run": "tax-structure__bm25__normistral",
+          "item_id": "everyday-nb-039",
+          "question": "Hvordan påvirker reduksjon av utgangsverdien beregningen av gevinst eller tap i forhold til terskelbeløpet?",
+          "answer": "[skatteloven  §  9-14-2] Terskelbeløp\n\n1. Gevinst på eiendel som nevnt i skatteloven  §  9-14 tredje ledd a som ikke overstiger  5 millioner kroner, er unntatt fra skatteplikten etter skatteloven  §  9-14 første ledd. Tilsvarende er tap på eiendel som nevnt i skatteloven  §  9-14 tredje ledd a som ikke overstiger  5 millioner kroner, ikke fradragsberettiget etter skatteloven  §  9-14 sjuende ledd.\n2. Samlet gevinst for alle eiendeler eller forpliktelser innenfor hver av objektgruppene som nevnt i skatteloven  §  9-14 tredje ledd b til e som fratrukket fradragsberettiget tap ikke overstiger  1 million kroner i løpet av inntektsåret, er unntatt fra skatteplikten etter skatteloven  §  9-14 første ledd. Tilsvarende er samlet tap for alle eiendeler eller forpliktelser innenfor hver av objektgruppene som nevnt i skatteloven  §  9-14 tredje ledd b til e som tillagt skattepliktig gevinst ikke overstiger  1 million kroner i løpet av inntektsåret, ikke fradragsberettiget etter skatteloven  §  9-14 sjuende ledd.\n3. Ved beregning av gevinst eller tap etter første ledd som skal sammenholdes med terskelbeløpene som nevnt andre og tredje ledd, skal det tas hensyn til reduksjon av utgangsverdien etter skatteloven  §  9-14 åttende ledd fjerde punktum.\n4. Det skal leveres oppgave som nevnt i  §  9-14-3 første ledd selv om gevinsten ikke overstiger terskelbeløpene som nevnt andre og tredje ledd.\n\nSpørsmål: Hvordan påvirker reduksjon av utgangsverdien beregningen av gevinst eller tap i forhold til terskelbeløpet?\n\nSvar: Reduksjon av utgangsverdien etter skatteloven  §  9-14 åttende ledd fjerde punktum tas med i beregningen av gevinst eller tap for eiendeler eller forpliktelser som nevnt i skatteloven  §  9-14 tredje ledd a, b, c, eller d, når terskelbeløpet beregnes. Dette betyr at hvis utgangsverdien reduseres, kan det føre til at gevinsten eller tapet blir høyere enn terskelbeløpet, noe som kan føre til skatteplikt eller fradragsrett. Det er imidlertid viktig å merke seg at bare reduksjoner som skyldes skatteloven  §  9-14 åttende ledd fjerde punktum tas med i beregningen. Andre reduksjoner, for eksempel endringer i valutakurser eller endringer i den skattepliktiges regnskapsmessige eller",
+          "reason": "Svaret forklarer korrekt at reduksjon av utgangsverdien etter skatteloven § 9-14 åttende ledd fjerde punktum tas med i beregningen."
+        }
+      ]
+    },
+    "missed_refusal": {
+      "count": 85,
+      "examples": [
+        {
+          "run": "tax-structure__bm25__gemma",
+          "item_id": "unanswerable-nn-001-4",
+          "question": "Kva er meirverdiavgiftsatsen på persontransport i år?",
+          "answer": "Det skal beregnast meirverdiavgift med redusert sats ved omsetning og uttak av tenester som gjeld persontransport [merverdiavgiftsloven § 5-3].",
+          "reason": "Det finnes ikke noe referansesvar å vurdere correctness mot."
+        },
+        {
+          "run": "tax-structure__bm25__normistral",
+          "item_id": "unanswerable-nb-001-1",
+          "question": "Hva er skattesatsen på alminnelig inntekt for personer i år?",
+          "answer": "Skattesatsen på alminnelig inntekt for personer i år er 22 %. Denne satsen gjelder for alle som er skattemessig bosatt i Norge og som har alminnelig inntekt. Vær oppmerksom på at dette er en sats som brukes til å beregne skatt på alminnelig inntekt, og den kan endres i fremtiden. For mer informasjon om gjeldende skattesatser, anbefaler jeg at du sjekker de offisielle nettsidene til Skatteetaten eller kontakter en skatteekspert.",
+          "reason": null
+        },
+        {
+          "run": "tax-structure__bm25__normistral",
+          "item_id": "unanswerable-nb-001-2",
+          "question": "Hva er innslagspunktet for første trinn i trinnskatten i år?",
+          "answer": "Inngangspunkt for første trinn i trinnskatten i år er 190 150 kroner. Dette er fastsatt i skatteloven § 12-1 og FSFIN § 12-1.",
+          "reason": null
+        }
+      ]
+    },
+    "unsupported_citation": {
+      "count": 30,
+      "examples": [
+        {
+          "run": "tax-structure__bm25__gemma",
+          "item_id": "direct-nb-057",
+          "question": "Når forfaller skattetrekk for en periode til betaling i forhold til innlevering av melding om trekk?",
+          "answer": "Skattetrekk i aksjeutbytte og utbyttekompensasjon for en periode forfaller til betaling samme dag som selskapet skal levere melding om trekk [skattebetalingsloven § 10-13]. Skattetrekk på renter og vederlag for immaterielle rettigheter og visse fysiske eiendeler forfaller til betaling samme dag som selskapet skal levere melding om trekk [skattebetalingsloven § 10-14].",
+          "reason": "Svaret treffer hovedpoenget, men kildepåstandene legger til spesifikke inntektstyper som ikke fremgår av den siterte lovteksten."
+        },
+        {
+          "run": "tax-structure__bm25__gemma",
+          "item_id": "everyday-nb-022",
+          "question": "Får jeg skattefritak på premie til pensjonsforsikring når jeg blir ervervsmessig ufør?",
+          "answer": "Premiefritak ved ervervsmessig uførhet regnes ikke som inntekt i tilknytning til individuell pensjonsforsikringsavtale etter skatteloven (IPA) [FSFIN § 5-43-2]. Det regnes heller ikke som inntekt for fortsettelsesforsikring utgått fra en privat tjenestepensjonsordning etter skatteloven [FSFIN § 5-43-2]. Videre regnes ikke premiefritak som inntekt for fortsettelsesforsikring etter lov av 24. mars 2000 nr. 16 om foretakspensjon § 4-9 [FSFIN § 5-43-2].",
+          "reason": "Svaret er riktig i forhold til referansesvaret, men påstanden i den siterte teksten inneholder en mangelfull tekstlinje."
+        },
+        {
+          "run": "tax-structure__bm25__normistral",
+          "item_id": "cross_reference-nb-008",
+          "question": "Må en skattyter som krever fradrag for utenlandsk skatt ved utbytte også levere en oversatt kopi av dokumentasjonen?",
+          "answer": "Basert på utdragene som er gitt, ser det ut til at en skattyter som krever fradrag for utenlandsk skatt ved utbytte, må levere en oversatt kopi av dokumentasjonen sammen med oversettelsen til norsk av autorisert translatør. Dette kravet er spesifisert i  [FSFIN § 6-13-12](https://www.skatteetaten.no/contentassets/b603f71922624c56b95f9413b5119e32/ff13_12.pdf) Dokumentasjonsplikt, avsnitt 3.\n\nDet er viktig å merke seg at denne regelen gjelder for skattytere som krever fradrag for utenlandsk skatt ved utbytte, og at kravet om å levere en oversatt kopi av dokumentasjonen gjelder for alle utenlandske dokumenter som kreves for å støtte kravet. I tillegg må dokumentasjonen være i papirform eller elektronisk form, og den må sendes på en måte som ivaretar personvernhensyn.\n\nI sum må en skattyter som krever fradrag for utenlandsk skatt ved utbytte levere en oversatt kopi av dokumentasjonen sammen med oversettelsen til norsk av autorisert translatør. Denne regelen er spesifisert i  [FSFIN § 6-13-12](https://www.skatteetaten.no/contentassets/b603f71922624c56b95f9413b5119e32/ff13_12.pdf) Dokumentasjonsplikt, avsnitt 3.",
+          "reason": "Svaret er for så vidt enig med referansesvaret, men siterer feil bestemmelse som gjelder familiebesøksreiser."
+        }
+      ]
+    },
+    "wrong_answer": {
+      "count": 104,
+      "examples": [
+        {
+          "run": "tax-structure__bm25__gemma",
+          "item_id": "everyday-nn-020",
+          "question": "Kor mange medlemmar må vere med når nemnda avgjer ein sak, og korleis blir avgjersla fatta?",
+          "answer": "",
+          "reason": "Svaret er tomt og besvarer ikke spørsmålet."
+        },
+        {
+          "run": "tax-structure__bm25__normistral",
+          "item_id": "cross_reference-nb-013",
+          "question": "Kan et registrert selskap kreve fradrag for inngående merverdiavgift på en maskin som ble kjøpt fire år før registreringen, dersom maskinen har en kostpris på 60 000 kroner?",
+          "answer": "1. Et registrert selskap kan kreve fradrag for inngående merverdiavgift på en maskin som ble kjøpt fire år før registreringen, forutsatt at maskinen har en kostpris på minst 30 000 kroner. Dette er fordi, ifølge skatteloven § 14-40, er driftsmidler som er varige og betydelige ansett som aktiveringspliktige, noe som betyr at de kan avskrives over tid. I dette tilfellet har maskinen en kostpris på 60 000 kroner, som er høyere enn terskelen på 30 000 kroner, og kan derfor avskrives.\n2. For å kreve dette fradraget, må selskapet sende inn en tilleggsmelding for den aktuelle to-måneders terminen registreringen ble foretatt i. Tilleggsmeldingen bør inkludere en forklaring på fradraget og de relevante støttedokumentene.\n3. Det er viktig å merke seg at tidsbegrensningen på tre år for tilbakegående avgiftsoppgjør som nevnt i merverdiavgiftsloven § 8-6 ikke gjelder for driftsmidler som er en del av en kapitalvare som nevnt i merverdiavgiftsloven § 9-1 annet ledd bokstav b. Dette betyr at selskapet kan kreve fradrag for inngående merverdiavgift på maskinen som ble kjøpt fire år før registreringen, selv om maskinen ikke ble brukt i avgiftspliktig virksomhet i løpet av de tre foregående årene.\n4. I tillegg er det verdt å merke seg at selskapet må overholde de spesifikke kravene og tidsfristene som er angitt i merverdiavgiftsforskriften § 8-6-1. Dette inkluderer å gi en detaljert forklaring av anskaffelsen og bruken av maskinen, samt å inkludere alle relevante støttedokumenter.\n\nJeg håper denne informasjonen er nyttig. Hvis du har flere spørsmål, er det bare å spørre.\n\nMerk: Svaret er skrevet i gyldig markdown-format, med klare og konsise setninger. Det gir en detaljert forklaring på selskapets rett til fradrag for inngående merverdiavgift på en maskin som ble kjøpt fire år før registreringen, og inkluderer informasjon om tidsbegrensninger og spesifikke krav. Svaret er også skrevet på en vennlig og hjelpsom måte, og unngår å bruke støtende språk.",
+          "reason": "Svaret konkluderer feilaktig med at selskapet kan kreve fradrag for kjøp foretatt fire år før registreringen."
+        },
+        {
+          "run": "tax-structure__bm25__normistral",
+          "item_id": "cross_reference-nb-024",
+          "question": "Får et vannkraftverk som ombygges og har en samlet påstemplet merkeytelse på 8 000 kVA fortsatt naturressursskatt?",
+          "answer": "Jeg er en KI-språkmodell og har ingen personlige erfaringer eller meninger. Jeg kan imidlertid gi informasjon basert på dataene jeg har blitt trent på. I spørsmålet ditt spør du om et vannkraftverk som er ombygd og har en samlet påstemplet merkeytelse på 8 000 kVA fortsatt vil være underlagt naturressursskatt. Basert på de gitte utdragene fra skatteloven og forskriftene, ser det ut til at vannkraftverk er pålagt å betale naturressursskatt for hver påstemplede merkeytelse på 1 000 kVA eller mer. Dette betyr at selv om et vannkraftverk har blitt ombygd og har en samlet påstemplet merkeytelse på 8 000 kVA, vil det fortsatt være underlagt naturressursskatt så lenge den samlede påstemplede merkeytelsen er 8 000 kVA eller mer.\n\nJeg håper denne forklaringen bidrar til å klargjøre situasjonen. Hvis du har flere spørsmål eller trenger ytterligere avklaring, vennligst gi meg beskjed.\n\nMerk: Svaret er basert på informasjonen som er gitt i utdragene og forutsetter at det ikke er noen unntak eller spesielle omstendigheter som gjelder for det aktuelle vannkraftverket.",
+          "reason": "Svaret hevder feilaktig at kraftverket på 8 000 kVA vil være underlagt naturressursskatt."
+        }
+      ]
+    },
+    "wrong_written_standard": {
+      "count": 12,
+      "examples": [
+        {
+          "run": "tax-structure__bm25__gemma",
+          "item_id": "unanswerable-nn-002-2",
+          "question": "Når sender Skatteetaten normalt ut skattemeldinga i år?",
+          "answer": "Jeg finner ikke svaret i lovtekstene jeg har fått.",
+          "reason": null
+        },
+        {
+          "run": "tax-structure__bm25__normistral",
+          "item_id": "direct-nn-024",
+          "question": "Gjelder bestemmelsane om rett til ytingar også når midlar knytt til ein individuell pensjonsavtale vert overført til eit anna selskap?",
+          "answer": "Basert på utdragene som er gitt, ser det ut til at retten til ytelser som er nevnt i  § 6-47-44 i FSFIN, også gjelder når midler knyttet til en individuell pensjonsavtale overføres til et annet selskap. Denne paragrafen spesifiserer at rettigheter til ytelser skal avtales ved avtaleinngåelse og ikke kan endres med mindre annet er spesifisert i lov eller forskrift. Videre spesifiserer den at retten til ytelser ikke inkluderer avtale om hvordan midlene skal forvaltes eller avtale om avkastningsgaranti. Derfor, selv om midlene overføres til et annet selskap, vil rettighetene til ytelsene som er avtalt i den individuelle pensjonsavtalen fortsatt gjelde.",
+          "reason": "Svaret bekrefter at retten til ytelser fortsatt gjelder selv om midlene overføres."
+        },
+        {
+          "run": "tax-structure__bm25__normistral",
+          "item_id": "everyday-nb-059",
+          "question": "Hvordan fastsettes verdien på en børsnotert finansiell opsjon når den løses inn?",
+          "answer": "Verdien av en børsnotert finansiell opsjon, som nevnt i skatteloven § 9-10-2, blir bestemt av den sist noterte omsetningsprisen for det underliggande objektet på innløysingsdagen. Dersom det ikkje finst nokon notering, blir den høgare eller lågare av dei to siste noteringane brukt, med mindre det er ein aksjeopsjon, då blir den sist noterte omsetningsprisen brukt. Denne regelen gjeld uavhengig av om den siste noteringa er frå innløysingsdagen eller ikkje.",
+          "reason": "Svaret nevner sist noterte omsetningspris, men utelater reglene om kjøper- og selgerkurs."
+        }
+      ]
+    }
+  }
+}

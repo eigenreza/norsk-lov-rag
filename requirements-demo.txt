@@ -1,0 +1,12 @@
+# Pinned packages for the demo (app/). The demo imports the package from src/ directly.
+# For Azure App Service, deploy this file as requirements.txt.
+httpx==0.28.1
+numpy==2.4.6
+pandas==3.1.1
+pydantic==2.14.3
+pydantic-settings==2.16.2
+PyYAML==6.0.3
+scipy==1.17.1
+snowballstemmer==3.1.1
+streamlit==1.67.0
+tzdata==2026.6

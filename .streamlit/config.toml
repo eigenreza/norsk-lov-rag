@@ -1,0 +1,13 @@
+# Settings for the demo. No usage statistics are sent to Streamlit.
+[browser]
+gatherUsageStats = false
+
+[server]
+headless = true
+maxUploadSize = 1
+
+[client]
+toolbarMode = "minimal"
+
+[theme]
+base = "light"
